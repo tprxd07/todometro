@@ -77,7 +77,7 @@ archivos están también disponibles en la
 | Plataforma | Formato | Descarga directa | Notas |
 | --- | --- | --- | --- |
 | Windows | Instalador NSIS | [TODOmetro-Windows-x64-Setup.exe](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Windows-x64-Setup.exe) | Recomendado. Crea acceso directo en el escritorio y en el menú Inicio. |
-| Windows | Instalador MSI | [TODOmetro-Windows-x64.msi](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Windows-x64.msi) | Alternativa para instalación/despliegue. Crea entrada en el menú Inicio. |
+| Windows | Instalador MSI | [TODOmetro-Windows-x64.msi](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Windows-x64.msi) | Alternativa para instalación/despliegue. Crea accesos directos en el escritorio y en el menú Inicio. |
 | Linux | AppImage | [TODOmetro-Linux-x86_64.AppImage](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Linux-x86_64.AppImage) | Funciona en Arch, Ubuntu, Fedora, Debian y otras. |
 | Linux | Debian/Ubuntu | [TODOmetro-Linux-amd64.deb](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Linux-amd64.deb) | Integra icono y entrada de aplicación. |
 | Linux | Fedora/RHEL | [TODOmetro-Linux-x86_64.rpm](https://github.com/tprxd07/todometro/releases/latest/download/TODOmetro-Linux-x86_64.rpm) | Integra icono y entrada de aplicación. |
@@ -96,8 +96,9 @@ archivos están también disponibles en la
 1. Descarga `TODOmetro-Windows-x64-Setup.exe` (recomendado) o el `.msi`.
 2. Ejecuta el instalador. Si aparece SmartScreen: **Más información** →
    **Ejecutar de todas formas**.
-3. El instalador NSIS crea el acceso directo **TODOmetro** en el escritorio y en
-   el menú Inicio. El MSI crea la entrada del menú Inicio.
+3. El instalador NSIS ofrece crear el acceso directo **TODOmetro** en el
+   escritorio y siempre crea la entrada del menú Inicio. El MSI crea ambos
+   accesos directamente.
 4. Abre TODOmetro desde el escritorio, el menú Inicio o el buscador de Windows.
 
 Requiere Windows 10/11 con WebView2 (incluido en Windows actualizado; el
@@ -175,8 +176,7 @@ buscador. Para un icono en el escritorio, arrastra la entrada desde el menú.
 ### Icono en escritorio y buscador
 
 - **Windows NSIS**: acceso directo en el escritorio y en el menú Inicio.
-- **Windows MSI**: entrada en el menú Inicio; el ejecutable también se puede
-  anclar al escritorio manualmente.
+- **Windows MSI**: accesos directos en el escritorio y en el menú Inicio.
 - **Linux**: los paquetes `.deb`, `.rpm` y el `PKGBUILD` registran la entrada
   `.desktop` y el icono en el menú de aplicaciones. En AppImage, usa los comandos
   de integración anteriores.
@@ -341,8 +341,8 @@ artefactos, los renombra con nombres estables y crea la release con
 Para publicar una versión nueva:
 
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
 Los enlaces `releases/latest/download/...` del apartado de descarga apuntan a

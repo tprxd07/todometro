@@ -17,7 +17,7 @@ escritorio con historial local.
 
 ## Descargas
 
-- Windows: instalador NSIS con acceso directo en el escritorio y en Inicio, o MSI.
+- Windows: instalador NSIS o MSI, ambos con accesos directos en el escritorio y en Inicio.
 - Linux: AppImage, Debian/Ubuntu `.deb`, Fedora/RHEL `.rpm` y `PKGBUILD` para Arch.
 - macOS: DMG para Apple Silicon y para Intel.
 
