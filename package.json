@@ -1,0 +1,13 @@
+{
+  "name": "todometro",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+    "pretauri": "node scripts/sync-frontend.mjs"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

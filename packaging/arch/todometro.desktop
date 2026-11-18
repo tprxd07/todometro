@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=TODOmetro
+GenericName=Cronómetro y contador
+Comment=Cronómetro y contador minimalista con historial local
+Exec=todometro
+Icon=todometro
+Terminal=false
+Categories=Utility;Office;
+Keywords=timer;stopwatch;countdown;pomodoro;productivity;
+StartupNotify=true

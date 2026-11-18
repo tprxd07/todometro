@@ -1,0 +1,27 @@
+# Maintainer: tprxd07
+pkgname=todometro
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Cronometro y contador minimalista con historial local"
+arch=('x86_64')
+url="https://github.com/tprxd07/todometro"
+license=('MIT')
+depends=('webkit2gtk-4.1' 'gtk3' 'libappindicator-gtk3' 'librsvg')
+makedepends=('rust' 'cargo' 'nodejs' 'npm' 'pkgconf')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/todometro-$pkgver"
+  npm ci
+  npm run tauri build -- --no-bundle
+}
+
+package() {
+  cd "$srcdir/todometro-$pkgver"
+  install -Dm755 src-tauri/target/release/todometro "$pkgdir/usr/bin/todometro"
+  install -Dm644 packaging/arch/todometro.desktop \
+    "$pkgdir/usr/share/applications/todometro.desktop"
+  install -Dm644 packaging/arch/todometro.png \
+    "$pkgdir/usr/share/icons/hicolor/256x256/apps/todometro.png"
+}
